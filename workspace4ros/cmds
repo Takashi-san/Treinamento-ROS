@@ -1,0 +1,14 @@
+catkin init
+catkin build
+source devel/setup.bash
+roscore
+
+rosnode
+rostopic
+rviz
+roslaunch robotino_node robotino_node.launch hostname:=172.26.101.103
+rosrun image_view image_view image:=<image topic> [image transport type]
+rosrun xv_11_laser_driver neato_laser_publisher _port:=/dev/ttyUSB0
+
+roslaunch robotino_teleop keyboard_teleop.launch
+roslaunch robotino_navigation gmapping.launch
